@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أنغام الثورة</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Amiri:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">أنغام الثورة</div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="ابحث عن أغنية..." onkeyup="searchSongs()">
+            <i class="fas fa-search"></i>
+        </div>
+        <ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#songs">الأغاني</a></li>
+            <li><a href="#about">عن الموقع</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>أنغام الثورة</h1>
+            <p>صوت المقاومة يعانق السماء</p>
+            <a href="#songs" class="btn pulse">استمع الآن</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <section id="songs">
+        <h2>أغاني ثورية مختارة</h2>
+        <div class="song-list" id="songList">
+            <!-- أغنية المعطي بوملي (الأولى) -->
+            <div class="song-card" data-title="المعطي بوملي">
+                <img src="https://images.unsplash.com/photo-1612287233367-3878e77a8730?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="المعطي بوملي" onerror="this.src='https://via.placeholder.com/280?text=المعطي+بوملي';">
+                <div class="song-info">
+                    <h3>المعطي بوملي</h3>
+                    <p>الشيخ إمام</p>
+                </div>
+                <div class="play-btn" onclick="playAudio('elmo3ti')"><i class="fas fa-play"></i></div>
+                <audio id="elmo3ti" src="https://drive.google.com/uc?export=download&id=1LTFZHMHnV8UIzQIjPGd2WsuY0XaWrPqs" preload="auto"></audio>
+            </div>
+            <div class="song-card" data-title="يا ظلام السجن">
+                <img src="https://i.ytimg.com/vi/7eP_UsDWYpM/maxresdefault.jpg" alt="يا ظلام السجن" onerror="this.src='https://via.placeholder.com/280?text=يا+ظلام+السجن';">
+                <div class="song-info">
+                    <h3>يا ظلام السجن</h3>
+                    <p>الشيخ إمام</p>
+                </div>
+                <div class="play-btn" onclick="playSong('ya_zalam', 'https://www.youtube.com/embed/7eP_UsDWYpM')"><i class="fas fa-play"></i></div>
+                <div class="player" id="ya_zalam"></div>
+            </div>
+            <div class="song-card" data-title="شرقية">
+                <img src="https://i.ytimg.com/vi/qvPzvNOfj8g/maxresdefault.jpg" alt="شرقية" onerror="this.src='https://via.placeholder.com/280?text=شرقية';">
+                <div class="song-info">
+                    <h3>شرقية</h3>
+                    <p>الشيخ إمام</p>
+                </div>
+                <div class="play-btn" onclick="playSong('sharqiyya', 'https://www.youtube.com/embed/qvPzvNOfj8g')"><i class="fas fa-play"></i></div>
+                <div class="player" id="sharqiyya"></div>
+            </div>
+            <div class="song-card" data-title="يا ست الدنيا يا بيروت">
+                <img src="https://i.ytimg.com/vi/8g7qG5zW7Qw/maxresdefault.jpg" alt="يا ست الدنيا يا بيروت" onerror="this.src='https://via.placeholder.com/280?text=يا+ست+الدنيا';">
+                <div class="song-info">
+                    <h3>يا ست الدنيا يا بيروت</h3>
+                    <p>جوليا بطرس</p>
+                </div>
+                <div class="play-btn" onclick="playSong('ya_set', 'https://www.youtube.com/embed/8g7qG5zW7Qw')"><i class="fas fa-play"></i></div>
+                <div class="player" id="ya_set"></div>
+            </div>
+            <div class="song-card" data-title="فلسطين بلادي">
+                <img src="https://i.ytimg.com/vi/5pXOcNxQfKY/maxresdefault.jpg" alt="فلسطين بلادي" onerror="this.src='https://via.placeholder.com/280?text=فلسطين+بلادي';">
+                <div class="song-info">
+                    <h3>فلسطين بلادي</h3>
+                    <p>مجموعة حنظلة</p>
+                </div>
+                <div class="play-btn" onclick="playSong('falasteen', 'https://www.youtube.com/embed/5pXOcNxQfKY')"><i class="fas fa-play"></i></div>
+                <div class="player" id="falasteen"></div>
+            </div>
+            <div class="song-card" data-title="فاليري جيسكار ديستان">
+                <img src="https://i.ytimg.com/vi/gQeL0KwL0fI/maxresdefault.jpg" alt="فاليري جيسكار ديستان" onerror="this.src='https://via.placeholder.com/280?text=فاليري';">
+                <div class="song-info">
+                    <h3>فاليري جيسكار ديستان</h3>
+                    <p>الشيخ إمام</p>
+                </div>
+                <div class="play-btn" onclick="playSong('valery', 'https://www.youtube.com/embed/gQeL0KwL0fI')"><i class="fas fa-play"></i></div>
+                <div class="player" id="valery"></div>
+            </div>
+            <div class="song-card" data-title="أغنية الجبهة الشعبية">
+                <img src="https://i.ytimg.com/vi/3pX0Z-sDHak/maxresdefault.jpg" alt="أغنية الجبهة الشعبية" onerror="this.src='https://via.placeholder.com/280?text=الجبهة+الشعبية';">
+                <div class="song-info">
+                    <h3>أغنية الجبهة الشعبية</h3>
+                    <p>الجبهة الشعبية لتحرير فلسطين</p>
+                </div>
+                <div class="play-btn" onclick="playSong('jabha', 'https://www.youtube.com/embed/3pX0Z-sDHak')"><i class="fas fa-play"></i></div>
+                <div class="player" id="jabha"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>عن أنغام الثورة</h2>
+        <p>منصة تجمع أصوات المقاومة والنضال، لنحيي ذكرى الثورة ونلهم الأجيال.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 أنغام الثورة. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
